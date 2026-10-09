@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陈逸飞 — 创意作品集</title>
+    <style id="theme-vars">
+/* Personal Portfolio — Luxury Editorial Theme
+   Brand prefix: pf
+   Tone: luxury/refined, editorial magazine feel
+   Primary hue: warm amber (#B5743A)
+   Surface: warm ivory (#FAFAF7) on charcoal (#1A1917) */
+
+:root {
+  /* === Brand Hue === */
+  --pf-primary: #B5743A;
+  --pf-primary-hover: #A06630;
+  --pf-primary-light: #F5EDE4;
+  --pf-primary-foreground: #FFFFFF;
+
+  /* === Neutral Surface System === */
+  --pf-background: #FAFAF7;
+  --pf-foreground: #1A1917;
+  --pf-card: #FFFFFF;
+  --pf-card-foreground: #1A1917;
+  --pf-popover: #FFFFFF;
+  --pf-popover-foreground: #1A1917;
+  --pf-muted: #F0EDE8;
+  --pf-muted-foreground: #6B6560;
+  --pf-border: #E8E4DD;
+  --pf-input: #E8E4DD;
+  --pf-ring: #B5743A;
+
+  /* === Radius Scale === */
+  --pf-radius-sm: 4px;
+  --pf-radius-md: 8px;
+  --pf-radius-lg: 12px;
+
+  /* === Typography === */
+  --pf-font-display: 'Playfair Display', 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+  --pf-font-body: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --pf-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* === Type Scale === */
+  --pf-text-display: 4rem;
+  --pf-text-h1: 3rem;
+  --pf-text-h2: 2rem;
+  --pf-text-h3: 1.5rem;
+  --pf-text-body: 1rem;
+  --pf-text-small: 0.875rem;
+  --pf-text-xs: 0.75rem;
+
+  /* === Spacing Scale === */
+  --pf-space-1: 0.25rem;
+  --pf-space-2: 0.5rem;
+  --pf-space-3: 0.75rem;
+  --pf-space-4: 1rem;
+  --pf-space-6: 1.5rem;
+  --pf-space-8: 2rem;
+  --pf-space-12: 3rem;
+  --pf-space-16: 4rem;
+  --pf-space-20: 5rem;
+  --pf-space-24: 6rem;
+  --pf-space-32: 8rem;
+
+  /* === Depth & Shadow === */
+  --pf-shadow-sm: 0 1px 2px rgba(26, 25, 23, 0.04);
+  --pf-shadow-md: 0 4px 12px rgba(26, 25, 23, 0.05);
+  --pf-shadow-lg: 0 8px 32px rgba(26, 25, 23, 0.05);
+
+  /* === Transitions === */
+  --pf-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --pf-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --pf-transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === Dark Mode Overrides === */
+.dark {
+  --pf-background: #1A1917;
+  --pf-foreground: #F0EDE8;
+  --pf-card: #252320;
+  --pf-card-foreground: #F0EDE8;
+  --pf-popover: #252320;
+  --pf-popover-foreground: #F0EDE8;
+  --pf-muted: #302D29;
+  --pf-muted-foreground: #A09890;
+  --pf-border: #3A3632;
+  --pf-input: #3A3632;
+  --pf-primary-light: #2D2418;
+  --pf-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --pf-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --pf-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--pf-background);
+    --color-foreground: var(--pf-foreground);
+    --color-card: var(--pf-card);
+    --color-card-foreground: var(--pf-card-foreground);
+    --color-popover: var(--pf-popover);
+    --color-popover-foreground: var(--pf-popover-foreground);
+    --color-primary: var(--pf-primary);
+    --color-primary-foreground: var(--pf-primary-foreground);
+    --color-muted: var(--pf-muted);
+    --color-muted-foreground: var(--pf-muted-foreground);
+    --color-border: var(--pf-border);
+    --color-input: var(--pf-input);
+    --color-ring: var(--pf-ring);
+    --radius-sm: var(--pf-radius-sm);
+    --radius-md: var(--pf-radius-md);
+    --radius-lg: var(--pf-radius-lg);
+  }
+  @layer base {
+    body { background: var(--pf-background); color: var(--pf-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--pf-background); }
+      .text-background { color: var(--pf-background); }
+      .border-background { border-color: var(--pf-background); }
+      .ring-background { --tw-ring-color: var(--pf-background); }
+      .bg-foreground { background-color: var(--pf-foreground); }
+      .text-foreground { color: var(--pf-foreground); }
+      .border-foreground { border-color: var(--pf-foreground); }
+      .ring-foreground { --tw-ring-color: var(--pf-foreground); }
+      .bg-card { background-color: var(--pf-card); }
+      .text-card { color: var(--pf-card); }
+      .border-card { border-color: var(--pf-card); }
+      .ring-card { --tw-ring-color: var(--pf-card); }
+      .bg-card-foreground { background-color: var(--pf-card-foreground); }
+      .text-card-foreground { color: var(--pf-card-foreground); }
+      .border-card-foreground { border-color: var(--pf-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--pf-card-foreground); }
+      .bg-popover { background-color: var(--pf-popover); }
+      .text-popover { color: var(--pf-popover); }
+      .border-popover { border-color: var(--pf-popover); }
+      .ring-popover { --tw-ring-color: var(--pf-popover); }
+      .bg-popover-foreground { background-color: var(--pf-popover-foreground); }
+      .text-popover-foreground { color: var(--pf-popover-foreground); }
+      .border-popover-foreground { border-color: var(--pf-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--pf-popover-foreground); }
+      .bg-primary { background-color: var(--pf-primary); }
+      .text-primary { color: var(--pf-primary); }
+      .border-primary { border-color: var(--pf-primary); }
+      .ring-primary { --tw-ring-color: var(--pf-primary); }
+      .bg-primary-foreground { background-color: var(--pf-primary-foreground); }
+      .text-primary-foreground { color: var(--pf-primary-foreground); }
+      .border-primary-foreground { border-color: var(--pf-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--pf-primary-foreground); }
+      .bg-muted { background-color: var(--pf-muted); }
+      .text-muted { color: var(--pf-muted); }
+      .border-muted { border-color: var(--pf-muted); }
+      .ring-muted { --tw-ring-color: var(--pf-muted); }
+      .bg-muted-foreground { background-color: var(--pf-muted-foreground); }
+      .text-muted-foreground { color: var(--pf-muted-foreground); }
+      .border-muted-foreground { border-color: var(--pf-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--pf-muted-foreground); }
+      .bg-border { background-color: var(--pf-border); }
+      .text-border { color: var(--pf-border); }
+      .border-border { border-color: var(--pf-border); }
+      .ring-border { --tw-ring-color: var(--pf-border); }
+      .bg-input { background-color: var(--pf-input); }
+      .text-input { color: var(--pf-input); }
+      .border-input { border-color: var(--pf-input); }
+      .ring-input { --tw-ring-color: var(--pf-input); }
+      .bg-ring { background-color: var(--pf-ring); }
+      .text-ring { color: var(--pf-ring); }
+      .border-ring { border-color: var(--pf-ring); }
+      .ring-ring { --tw-ring-color: var(--pf-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <style>body { font-family: var(--pf-font-body); }</style>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="#" style="font-family: var(--pf-font-display)" class="text-xl tracking-wider text-foreground">陈逸飞</a>
+        <div class="flex items-center gap-6 lg:gap-8">
+          <a href="#about" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">关于</a>
+          <a href="#works" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">作品</a>
+          <a href="#contact" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">联系</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="pt-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+          <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
+            <!-- Left: Text (60%) -->
+            <div class="w-full lg:w-3/5 space-y-8">
+              <h1 style="font-family: var(--pf-font-display); letter-spacing: 0.08em" class="text-4xl lg:text-5xl xl:text-[4rem] font-bold text-foreground leading-tight">
+                用创意诠释世界
+              </h1>
+              <p class="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-xl">
+                以独特的视角与精湛的技艺，将艺术与生活融为一体，创造触动心灵的视觉体验。
+              </p>
+              <div class="flex items-center gap-4 pt-2">
+                <a href="#works" class="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:opacity-90 transition-opacity duration-200">
+                  探索作品
+                </a>
+                <a href="#about" class="inline-flex items-center px-6 py-3 border border-border text-foreground rounded-md text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-200">
+                  了解更多
+                </a>
+              </div>
+            </div>
+            <!-- Right: Image (40%) -->
+            <div class="w-full lg:w-2/5">
+              <div class="aspect-[4/5] rounded-lg overflow-hidden">
+                <img src="./personal-portfolio/assets/hero-main.jpg" alt="创意艺术工作室" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="border-t border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+          <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+            <!-- Left: Portrait (35%) -->
+            <div class="w-full lg:w-[35%]">
+              <div class="aspect-[3/4] rounded-lg overflow-hidden">
+                <img src="./personal-portfolio/assets/portrait.jpg" alt="陈逸飞肖像" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <!-- Right: Bio (65%) -->
+            <div class="w-full lg:w-[65%] flex flex-col justify-center space-y-6">
+              <h2 style="font-family: var(--pf-font-display); letter-spacing: 0.05em" class="text-3xl lg:text-[2rem] font-bold text-foreground">
+                关于我
+              </h2>
+              <p class="text-muted-foreground leading-relaxed text-lg">
+                我是一名拥有十年经验的创意总监与视觉艺术家，专注于品牌视觉设计、艺术策展与数字创意领域。我相信每一个作品都是对美的一次探索，每一帧画面都承载着独特的故事。
+              </p>
+              <p class="text-muted-foreground leading-relaxed">
+                曾为多家知名品牌提供创意指导，作品曾展出于国际艺术博览会。我的创作理念源于对生活的细腻观察，致力于用视觉语言连接情感与审美。
+              </p>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <span class="px-4 py-2 bg-muted text-muted-foreground text-sm rounded-full">品牌设计</span>
+                <span class="px-4 py-2 bg-muted text-muted-foreground text-sm rounded-full">视觉艺术</span>
+                <span class="px-4 py-2 bg-muted text-muted-foreground text-sm rounded-full">创意策划</span>
+                <span class="px-4 py-2 bg-muted text-muted-foreground text-sm rounded-full">艺术策展</span>
+                <span class="px-4 py-2 bg-muted text-muted-foreground text-sm rounded-full">数字媒体</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Works Section -->
+      <section id="works" class="border-t border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+          <div class="mb-16">
+            <h2 style="font-family: var(--pf-font-display); letter-spacing: 0.05em" class="text-3xl lg:text-[2rem] font-bold text-foreground">
+              精选作品
+            </h2>
+            <p class="mt-4 text-muted-foreground text-lg max-w-2xl">
+              每一件作品都是对美与创意的深入探索
+            </p>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+            <!-- Work 1: Taller -->
+            <div class="group bg-card border border-border rounded-lg overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(26,25,23,0.06)]">
+              <div class="aspect-[4/5] overflow-hidden">
+                <img src="./personal-portfolio/assets/work-abstract.jpg" alt="大地之韵 — 抽象当代绘画" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-foreground mb-2">大地之韵</h3>
+                <p class="text-muted-foreground text-sm leading-relaxed">以温暖的土色调和金箔肌理，探索自然与人文的交融之美。灵感源于大地的原始力量与季节更迭。</p>
+              </div>
+            </div>
+            <!-- Work 2: Shorter, staggered -->
+            <div class="group bg-card border border-border rounded-lg overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(26,25,23,0.06)] lg:mt-20">
+              <div class="aspect-[3/2] overflow-hidden">
+                <img src="./personal-portfolio/assets/work-architecture.jpg" alt="光影之间 — 极简空间摄影" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-foreground mb-2">光影之间</h3>
+                <p class="text-muted-foreground text-sm leading-relaxed">极简主义空间摄影，捕捉自然光与建筑结构的和谐对话。以克制的构图展现空间的宁静力量。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="border-t border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+          <div class="max-w-2xl mx-auto text-center space-y-8">
+            <h2 style="font-family: var(--pf-font-display); letter-spacing: 0.05em" class="text-3xl lg:text-[2rem] font-bold text-foreground">
+              期待与你合作
+            </h2>
+            <p class="text-muted-foreground text-lg leading-relaxed">
+              无论是一个品牌项目、艺术合作，还是一次灵感碰撞的对话，我都很期待听到你的想法。让我们一起创造美好。
+            </p>
+            <div>
+              <a href="mailto:chen@creativefolio.com" class="inline-flex items-center px-8 py-3.5 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:opacity-90 transition-opacity duration-200">
+                取得联系
+              </a>
+            </div>
+            <div class="pt-2">
+              <a href="mailto:chen@creativefolio.com" class="text-muted-foreground hover:text-primary transition-colors duration-200">
+                chen@creativefolio.com
+              </a>
+            </div>
+            <div class="flex items-center justify-center gap-6 pt-2">
+              <a href="#" class="text-muted-foreground hover:text-primary transition-colors duration-200" aria-label="Instagram">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="text-muted-foreground hover:text-primary transition-colors duration-200" aria-label="Twitter">
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="text-muted-foreground hover:text-primary transition-colors duration-200" aria-label="Dribbble">
+                <i data-lucide="dribbble" class="w-5 h-5"></i>
+              </a>
+              <a href="mailto:chen@creativefolio.com" class="text-muted-foreground hover:text-primary transition-colors duration-200" aria-label="Email">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+        <p class="text-sm text-muted-foreground text-center">&copy; 2026 陈逸飞. 保留所有权利.</p>
+      </div>
+    </footer>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
